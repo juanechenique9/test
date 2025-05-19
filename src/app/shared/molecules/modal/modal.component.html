@@ -1,0 +1,12 @@
+<div class="generic-modal__backdrop">
+  <div class="generic-modal__container">
+    <p
+      class="generic-modal__description"
+      [ngClass]="{
+        'generic-modal__description--error': type === 'error'
+      }"
+    >
+      {{ description }}
+    </p>
+  </div>
+</div>

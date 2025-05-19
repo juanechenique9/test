@@ -1,0 +1,68 @@
+<div class="table table--virtual" role="table" [attr.aria-label]="ariaLabel">
+  <!-- HEADER -->
+  <div class="table__head" role="rowgroup">
+    <div class="table__row table__row--header" role="row">
+      <div
+        class="table__cell table__cell--header"
+        *ngFor="let col of header"
+        role="columnheader"
+      >
+        {{ col.label }}
+      </div>
+    </div>
+  </div>
+
+  <!-- VIRTUAL SCROLL -->
+  <cdk-virtual-scroll-viewport
+    *ngIf="useVirtualScroll"
+    class="table__viewport"
+    itemSize="56"
+    role="rowgroup"
+    [style.height.px]="300"
+  >
+    <div
+      class="table__row"
+      *cdkVirtualFor="let item of row; let i = index"
+      (click)="onRowClick(item)"
+      [class.selected]="isSelected(item)"
+      role="row"
+      tabindex="0"
+      (keydown.enter)="onRowClick(item)"
+      (keydown.space)="onRowClick(item)"
+    >
+      <div
+        class="table__cell"
+        *ngFor="let cell of item.columns"
+        [attr.data-label]="getLabel(cell.headerId)"
+        [attr.data-cy]="i === 0 ? 'country-name' : null"
+        role="cell"
+      >
+        {{ cell.primaryText }}
+      </div>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
+  <!-- NORMAL SCROLL -->
+  <div *ngIf="!useVirtualScroll" role="rowgroup">
+    <div
+      class="table__row"
+      *ngFor="let item of row; let i = index"
+      (click)="onRowClick(item)"
+      [class.selected]="isSelected(item)"
+      role="row"
+      tabindex="0"
+      (keydown.enter)="onRowClick(item)"
+      (keydown.space)="onRowClick(item)"
+    >
+      <div
+        class="table__cell"
+        *ngFor="let cell of item.columns"
+        [attr.data-label]="getLabel(cell.headerId)"
+        [attr.data-cy]="i === 0 ? 'country-name' : null"
+        role="cell"
+      >
+        {{ cell.primaryText }}
+      </div>
+    </div>
+  </div>
+</div>

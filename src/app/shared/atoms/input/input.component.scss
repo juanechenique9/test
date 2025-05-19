@@ -1,0 +1,54 @@
+@use '../../../../styles/variables' as v;
+
+.input-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: v.$size_1rem;
+
+  &__label {
+    font-family: Arial, sans-serif;
+    margin-bottom: v.$size_05rem;
+    font-weight: 600;
+    font-size: v.$size_1rem;
+    color: v.$color_title;
+  }
+
+  &__field {
+    padding: v.$size_075rem v.$size_1rem;
+    font-size: v.$size_1rem;
+    border: v.$size_1px solid v.$color_border;
+    border-radius: v.$size_4px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: v.$color_border_focus;
+      box-shadow: 0 0 0 v.$size_3px v.$color_border_focus_shadow;
+    }
+
+    &:disabled {
+      background-color: v.$color_background_disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__field {
+      font-size: v.$size_09rem;
+      padding: v.$size_06rem v.$size_09rem;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+    &__field {
+      font-size: v.$size_1rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    &__field {
+      font-size: v.$size_1_1rem;
+    }
+  }
+}

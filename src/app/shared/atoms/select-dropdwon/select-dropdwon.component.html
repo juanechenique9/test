@@ -1,0 +1,28 @@
+<div class="select-dropdown">
+  <label
+    class="select-dropdown__label"
+    [attr.for]="id"
+    *ngIf="label"
+  >
+    {{ label }}
+  </label>
+
+  <select
+    class="select-dropdown__select"
+    [id]="id"
+    [disabled]="disabled"
+    [attr.aria-label]="ariaLabel || label"
+    [attr.aria-disabled]="disabled"
+    [value]="value"
+    (change)="onSelect($event)"
+    (blur)="onBlur()"
+  >
+    <option value="" disabled selected hidden>{{ placeholder }}</option>
+    <option
+      *ngFor="let option of options"
+      [value]="option.value"
+    >
+      {{ option.label }}
+    </option>
+  </select>
+</div>

@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__inputs {
+    display: flex;
+    gap: 3rem;
+
+    &--search {
+      width: 25%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &--search {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+
+    &__inputs {
+      &--search {
+        width: 100%;
+      }
+    }
+  }
+}

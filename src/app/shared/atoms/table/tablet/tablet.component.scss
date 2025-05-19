@@ -1,0 +1,105 @@
+@use "../../../../../styles/variables" as v;
+
+.table {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  font-size: v.$size_16px;
+  color: v.$color_title;
+
+  &--virtual {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head {
+    background-color: v.$color_background_white_table;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: v.$size_2px solid #ccc;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  &__viewport {
+    overflow-y: auto;
+    height: 400px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: v.$size_1px solid v.$color_border_bottom;
+    width: 100%;
+    box-sizing: border-box;
+
+    &--header {
+      background-color: v.$color_background_white_table;
+      font-weight: bold;
+    }
+
+    
+
+    @media (max-width: 600px) {
+      display: block;
+      margin-bottom: v.$size_1rem;
+      padding: v.$size_05rem;
+      border: v.$size_6px solid v.$color_border_secondary;
+      border-radius: v.$size_1px;
+    }
+
+    &.selected {
+      background-color: rgba(0, 123, 255, 0.08); 
+    }
+  }
+
+  &__cell {
+    flex: 1;
+    padding: v.$size_12px v.$size_16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+
+    &--header {
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      display: flex;
+      justify-content: space-between;
+      padding: v.$size_8px 0;
+      border-bottom: v.$size_1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: v.$color_gray;
+        flex-basis: 40%;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+    font-size: v.$size_14px;
+    &__cell {
+      padding: v.$size_10px v.$size_12px;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    font-size: v.$size_16px;
+  }
+}

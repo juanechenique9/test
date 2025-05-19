@@ -1,0 +1,22 @@
+<div class="input-text">
+  <label
+    class="input-text__label"
+    [attr.for]="id"
+    *ngIf="label"
+  >
+    {{ label }}
+  </label>
+
+  <input
+    class="input-text__field"
+    [id]="id"
+    type="text"
+    [attr.placeholder]="placeholder"
+    [attr.aria-label]="ariaLabel || label"
+    [attr.aria-disabled]="disabled"
+    [disabled]="disabled"
+    [value]="value"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  />
+</div>

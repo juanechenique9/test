@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": ["jest"],
+    "target": "ES2022",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowJs": true
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts",
+    "src/**/*.mock.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.e2e-spec.ts",
+    "cypress",
+    "cypress.config.ts"
+  ]
+}

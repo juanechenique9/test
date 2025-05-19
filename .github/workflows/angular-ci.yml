@@ -34,5 +34,5 @@ jobs:
 
 
     - name: Run tests with coverage
-      run: npm run test -- --watch=false --code-coverage
+      run: npm run jest --coverage
 

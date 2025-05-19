@@ -3,6 +3,8 @@
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
 Use node: v22.15.1 or one higher.
 
+The changes are in the develop branch, you must download it to run the project.
+
 ## Development server
 
 To start a local development server, run:
@@ -76,7 +78,7 @@ The singleton pattern was implemented in services to ensure that only one instan
 
 ## Important
 
-To go to the country details you must select it.
+To go to the country details you must select the row
 
 
 

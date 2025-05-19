@@ -1,13 +1,14 @@
 # Test
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+Use node: v22.15.1 or one higher.
 
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -31,7 +32,7 @@ ng generate --help
 To build the project run:
 
 ```bash
-ng build
+npm run build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
@@ -71,3 +72,11 @@ It was implemented for scalability, consistency and maintainability of the user 
 ## Singleton pattern in services
 
 The singleton pattern was implemented in services to ensure that only one instance of a shared resource exists.
+
+
+## Important
+
+To go to the country details you must select it.
+
+
+

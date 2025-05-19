@@ -80,7 +80,8 @@ The singleton pattern was implemented in services to ensure that only one instan
 
 ## Important
 
-To go to the country details you must select the row
+- To go to the country details you must select the row.
+- I didn't do the admin module because the test wasn't clear about it.
 
 
 

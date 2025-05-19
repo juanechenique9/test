@@ -1,6 +1,6 @@
 describe('CountriesListComponent E2E', () => {
   beforeEach(() => {
-    cy.visit('/list');
+    cy.visit('/countries');
   });
 
   it('should filter countries by name and region', () => {
